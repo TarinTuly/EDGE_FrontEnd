@@ -5,6 +5,8 @@ import './App.css'
 import SecondComponent from './component/SecondComponent'
 import { Button, ButtonBase } from '@mui/material'
 import ProductComponent from './component/ProductComponent'
+import Component_03_10 from './component/Component_03_10'
+import ConditionalRendaring from './component/ConditionalRendaring'
 
 const a = 'tarin'
 
@@ -45,16 +47,30 @@ function App() {
       }
    ]
 
+   const StudentInfo=[
+      {
+         name:'Tarin',
+         email:'tarin@gmail.com',
+         age:25,
+      },
+      {
+         name:'Tuly',
+         email:'tuly@gmail.com',
+         age:26,
+      },
+      {
+         name:'Tamanna',
+         email:'tamanna@gmail.com',
+         age:16,
+      }	
+   ]
+
    return (
       
       <>
-         Learn React with me
-         {/* <SecondComponent name={a} fun1={fun1} email='tarin@gmail.com' device={devices} fun2={button_try} /> */}
-         {/* <SecondComponent allInfo={studentInfo}/> */}
-        
-         {productList.map(p=>(
-            <ProductComponent key={p.id} allProduct={p}/>
-         ))}
+          <h1>Product Info</h1>
+            {/* <Component_03_10 productList={productList} /> */}
+            <ConditionalRendaring StudentInfo={StudentInfo} />
       </>
    )
 }
