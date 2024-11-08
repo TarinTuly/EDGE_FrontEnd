@@ -4,8 +4,8 @@ import React from 'react';
 
 function Homework1Component() {
     const [expression, setExpression] = React.useState(""); // State to store the input
-    const [result, setResult] = React.useState(""); // State to store the result
-
+    const [result, setResult] = React.useState(0); // State to store the result
+    const[count,setcount]=React.useState(0);
     // Handler function to update the expression based on user input
     const handleChange = (event) => {
         const input = event.target.value; // Declare input properly
@@ -17,12 +17,14 @@ function Homework1Component() {
             setResult("Invalid Expression");
         }
     };
-    const[count,setcount]=React.useState(0);
-    const handleIncremet=(e)=>{
-        setcount(count+1);
+
+    const handleIncremet=()=>{
+        //setcount(count+1);
+        setResult((result+1));
     }
-    const handleDecrement=(e)=>{
-        setcount(count-1);
+    const handleDecrement=()=>{
+        //setcount(count-1);
+        setResult((result-1));
     }
 
     return (
@@ -38,15 +40,13 @@ function Homework1Component() {
             </Typography>
 
             {/* Display the entered expression */}
-            <Typography>
-                Result: {result}
-            </Typography>
+           
            </div>
            <div>
             <button onClick={handleIncremet}  style={{ backgroundColor: "#A594F9", }}>Increamnet</button>
             <button onClick={handleDecrement} style={{ backgroundColor: "red" }}>Decrement</button>
             <Typography>
-                {count}
+                Result: {result}
             </Typography>
            </div>
         </div>
