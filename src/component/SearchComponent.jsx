@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CircularProgress, TextField } from "@mui/material";
+import PostApiComponent from './PostApiComponent';
 
 export default function SearchComponent() {
   const [searchValue, setSearchValue] = useState("");
@@ -14,7 +15,7 @@ export default function SearchComponent() {
       }
       setisLoading(true);
       try {
-        const response = await fetch(`http://10.19.80.76:8081/test_api/search.php?query=${searchValue}`);
+        const response = await fetch(`http://10.19.80.67:8081/test_api/search.php?query=${searchValue}`);
         const data = await response.json();
         console.log(data);
         setresults(data.results || []);
@@ -30,6 +31,8 @@ export default function SearchComponent() {
 
   return (
     <div>
+      Search Here
+      <br/>
       <TextField
         id="search"
         name="search"
@@ -49,6 +52,7 @@ export default function SearchComponent() {
       ) : searchValue ? (
         <p>No results found</p>
       ) : null}
+      <PostApiComponent/>
     </div>
   );
 }

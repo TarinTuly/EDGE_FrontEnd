@@ -9,6 +9,7 @@ import Component_03_10 from './component/Component_03_10'
 import ConditionalRendaring from './component/ConditionalRendaring'
 import FormComponent from './component/formComponent'
 import SearchComponent from './component/SearchComponent'
+import PostApiComponent from './component/PostApiComponent'
  // Use the correct capitalization
 
 const a = 'tarin'
@@ -63,6 +64,7 @@ function App() {
       {/* <FormComponent />  */}
     
       <SearchComponent />
+      
     </>
   )
 }
